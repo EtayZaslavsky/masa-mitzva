@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "20dac4a9b08fab39331077ad4ac3564c955734c277439a46436a0bcc6eb08aa1"
+            "sha256": "8626a6f0ffe56f64b6f10b196db0c3c2e9363ee7ebcf3a3d36962670e396d380"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -32,6 +32,29 @@
             ],
             "index": "pypi",
             "version": "==4.1"
+        },
+        "django-nested-admin": {
+            "hashes": [
+                "sha256:4a1189b57a85496fb319045e5b6db71a1242bc539721179aa3e4f54aae56fe0f",
+                "sha256:f6175d2fec1c883e9335695119b020267c69796cc95f5f2c9b7a315ad522b2c1"
+            ],
+            "index": "pypi",
+            "version": "==3.2.4"
+        },
+        "python-monkey-business": {
+            "hashes": [
+                "sha256:6d4cf47f011945db838ccf04643acd49b82f7ad6ab7ecba4c8165385687a828a",
+                "sha256:9976522989766f00b2aaa24ec96eacb91a6de7b7001d1452079323b071988e0e"
+            ],
+            "version": "==1.0.0"
+        },
+        "six": {
+            "hashes": [
+                "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926",
+                "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"
+            ],
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "version": "==1.16.0"
         },
         "sqlparse": {
             "hashes": [
