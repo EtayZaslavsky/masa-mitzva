@@ -1,0 +1,19 @@
+{% extends "first-base.html" %}
+
+{% block title %}מסע מצווה | {{title}}{% endblock %}
+
+{% block content %}
+	<div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+		<form class="p-4" method="post" style="background-color: white;">
+		    {% csrf_token %}
+		    <!-- <label>שם משתמש</label>  -->
+		    <h5 class="mb-4">{{title}}</h5>
+		    <input class="mb-3" type="text" placeholder="שם משתמש" name="username" required autofocus>
+		    <!-- <label>סיסמא</label>  -->
+		    <input class="mb-3" type="password" placeholder="סיסמא" name="password" required>
+		    <input type="submit" value="שלח">
+		</form>
+	</div>
+{% endblock %}
+
+

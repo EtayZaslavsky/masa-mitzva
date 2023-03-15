@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}מסע מצווה{% endblock %}
+
+{% block nav_items %}
+	{% for class_group in class_groups %}
+		<li class="nav-item">
+			<a class="nav-link" href="">{{class_group.grade.year}} {{ class_group.number }}</a>
+	  	</li>
+	{% endfor %}
+{% endblock %}
+
+{% block content %}
+	<ul>
+	{% for student in students_list %}
+	  <li>
+	  	<a href="{{student.journey.get_absolute_url}}">
+	  		{{ student.username }}
+	  	</a>
+	  </li>
+	{% endfor %}
+	</ul>
+{% endblock %}

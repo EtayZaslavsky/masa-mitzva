@@ -1,0 +1,38 @@
+{% load django_bootstrap5 %}
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}מסע מצווה{% endblock %}</title>
+	{% bootstrap_css %}
+	<style>input, textarea{display: block;}</style>
+  </head>
+  <body>
+	{# Display django.contrib.messages as Bootstrap alerts #}
+	{% bootstrap_messages %}
+  	{% load static %}
+  	<div class="container-fluid d-flex flex-column p-0 bg-image" id="content" style="background-image: url({% static 'background.jpg' %}); height: 100vh; background-position: center center;">
+   		<nav class="navbar navbar-expand-lg mb-5 bg-body-tertiary navbar-light bg-light">
+ 			<div class="container d-flex">
+		    <a class="navbar-brand" href="{% url 'home' %}">
+	      		<img src="{% static 'zika.webp' %}" alt="זיקה" height="60">
+		    </a>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="גלול ניווט">
+				<span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+		       		{% block nav_items %}{% endblock %}
+		       		{% block semi_nav_items %}{% endblock %}
+	        	</ul>
+        	</div>
+		  </div>
+    	</nav>
+    	<div class="container-lg overflow-auto" style="height: 100%;">
+		{% block content %}{% endblock %}
+		</div>
+	</div>
+	{% bootstrap_javascript %}
+  </body>
+</html>

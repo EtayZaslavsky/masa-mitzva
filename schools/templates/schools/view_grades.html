@@ -1,0 +1,11 @@
+ {% if grades %}
+  <ul>
+    {% for grade in grades %}
+      <li>
+        <p>{{grade.year}}</p>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no books in the library.</p>
+  {% endif %}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}מסע מצווה | {{title}}{% endblock %}
+
+{% block nav_items %}
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit-id' journey_id 0 %}">הקדמה</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit-id' journey_id 1 %}">תחנה א'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit-id' journey_id 2 %}">תחנה ב'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit-id' journey_id 3 %}">תחנה ג'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit-id' journey_id 4 %}">תחנה ד'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit-id' journey_id 5 %}">תחנה ה'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit-id' journey_id 6 %}">תחנה ו'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit-id' journey_id 7 %}">תחנה ז'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit-id' journey_id 8 %}">תחנה ח'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit-id' journey_id 9 %}">תחנה ט'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit-id' journey_id 10 %}">תחנה י'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit-id' journey_id 11 %}">תחנה יא'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit-id' journey_id 12 %}">תחנה יב'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit-id' journey_id 13 %}">תחנת הסיום</a>
+</li>
+{% endblock %}
+
+
+{% block content %}
+	<h1>{{title}}</h1>
+	{% for field in fields_list %}
+	  <label>{{ field.name }}</label>
+	  {% if field.type == 'FileField'%}
+	  <img src='/media/{{ field.value }}' />
+	  {% else %}
+	  <p>{{ field.value }}</p>
+	  {% endif %}
+	{% endfor %}
+{% endblock %}
+
+

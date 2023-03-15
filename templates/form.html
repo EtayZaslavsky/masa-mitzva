@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+
+{% block title %}מסע מצווה | {{title}}{% endblock %}
+
+{% block nav_items %}
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit' 0 %}">הקדמה</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit' 1 %}">תחנה א'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit' 2 %}">תחנה ב'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit' 3 %}">תחנה ג'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit' 4 %}">תחנה ד'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit' 5 %}">תחנה ה'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit' 6 %}">תחנה ו'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit' 7 %}">תחנה ז'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit' 8 %}">תחנה ח'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit' 9 %}">תחנה ט'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit' 10 %}">תחנה י'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit' 11 %}">תחנה יא'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit' 12 %}">תחנה יב'</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{% url 'exhibit' 13 %}">תחנת הסיום</a>
+</li>
+{% endblock %}
+
+
+{% block content %}
+	<h1>{{title}}</h1>
+	<h5 class="mb-5">{{sub_title}}</h5>
+{% if submitted %}
+<h3>הטופס נשמר בהצלחה!</h3>
+{% endif %}
+{% if form.is_multipart %}
+    <form enctype="multipart/form-data" method="post">
+{% else %}
+    <form method="post">
+{% endif %}	    
+		{% csrf_token %}
+		{% bootstrap_form form %}
+  		{% bootstrap_button button_type="submit" content="שלח" %}
+	</form>
+	<h4 class="mt-4 mb-5">{{quote}}</h4>
+{% endblock %}
+
+

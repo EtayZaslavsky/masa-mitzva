@@ -1,0 +1,15 @@
+{% extends "first-base.html" %}
+{% block nav_items %}{% endblock %}
+{% block first_nav_items %}
+
+	{% if user.is_authenticated %}
+       	<li class="nav-item">
+        	<a class="nav-link" href="{% url 'logout' %}">התנתק</a>
+        </li>				        
+	{% else %}
+    	<li class="nav-item">
+        	<a class="nav-link" href="{% url 'login' %}">התחבר</a>
+        </li>
+	{% endif %}
+{% endblock %}
+   
